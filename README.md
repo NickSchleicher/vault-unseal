@@ -11,5 +11,8 @@ Unseal a vault server that is named `vault` and is running on the same machine a
 ```
 docker run -e VAULT_ADDR="http://vault:8200" -e VAULT_KEYS="key1,key2,key3" 
 --network="docker_default" nickschleicher/vault-unseal
-```
-
+```  
+  
+Optional Environment Variables:
+`VAULT_UNSEAL_RETRY_COUNT`: how many times to retry unsealing if vault server is not ready yet (default 0)
+`VAULT_UNSEAL_RETRY_SECOND`: how long to wait in between retries (default 5)
